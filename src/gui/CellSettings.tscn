@@ -1,0 +1,220 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://gui/CellSettings.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/an-empty-face.png" type="Texture" id=2]
+[ext_resource path="res://assets/icons/up-down-arrows.png" type="Texture" id=3]
+[ext_resource path="res://assets/cubes/cube-back.png" type="Texture" id=4]
+[ext_resource path="res://assets/icons/circle-arrows.png" type="Texture" id=5]
+[ext_resource path="res://assets/cubes/cube-left.png" type="Texture" id=6]
+[ext_resource path="res://assets/cubes/cube-bottom.png" type="Texture" id=7]
+[ext_resource path="res://assets/cubes/cube-right.png" type="Texture" id=8]
+[ext_resource path="res://assets/icons/left-arrow.png" type="Texture" id=9]
+[ext_resource path="res://assets/cubes/cube-front.png" type="Texture" id=10]
+[ext_resource path="res://assets/cubes/cube-top.png" type="Texture" id=11]
+[ext_resource path="res://gui/FaceSettings.tscn" type="PackedScene" id=12]
+
+
+[node name="CellSettings" type="Control"]
+margin_left = -0.902496
+margin_right = -0.902496
+script = ExtResource( 1 )
+blank = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 248.0
+margin_bottom = 520.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="NameTag" type="TextEdit" parent="Panel/VBox"]
+margin_right = 237.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 0, 22 )
+rect_clip_content = true
+text = "Title"
+
+[node name="Grid" type="GridContainer" parent="Panel/VBox"]
+editor/display_folded = true
+margin_top = 26.0
+margin_right = 237.0
+margin_bottom = 246.0
+custom_constants/vseparation = 5
+custom_constants/hseparation = 5
+columns = 3
+
+[node name="UpDown" type="Button" parent="Panel/VBox/Grid"]
+margin_right = 76.0
+margin_bottom = 70.0
+icon = ExtResource( 3 )
+
+[node name="Back" type="Button" parent="Panel/VBox/Grid" groups=[
+"Faces",
+]]
+margin_left = 81.0
+margin_right = 156.0
+margin_bottom = 70.0
+icon = ExtResource( 4 )
+
+[node name="Spin" type="Button" parent="Panel/VBox/Grid"]
+margin_left = 161.0
+margin_right = 237.0
+margin_bottom = 70.0
+icon = ExtResource( 5 )
+
+[node name="Left" type="Button" parent="Panel/VBox/Grid" groups=[
+"Faces",
+]]
+margin_top = 75.0
+margin_right = 76.0
+margin_bottom = 145.0
+rect_pivot_offset = Vector2( -43.0975, 135 )
+icon = ExtResource( 6 )
+
+[node name="Base" type="Button" parent="Panel/VBox/Grid" groups=[
+"Faces",
+]]
+margin_left = 81.0
+margin_top = 75.0
+margin_right = 156.0
+margin_bottom = 145.0
+rect_pivot_offset = Vector2( -43.0975, 135 )
+icon = ExtResource( 7 )
+
+[node name="Right" type="Button" parent="Panel/VBox/Grid" groups=[
+"Faces",
+]]
+margin_left = 161.0
+margin_top = 75.0
+margin_right = 237.0
+margin_bottom = 145.0
+rect_pivot_offset = Vector2( -43.0975, 135 )
+icon = ExtResource( 8 )
+
+[node name="OK" type="Button" parent="Panel/VBox/Grid"]
+margin_top = 150.0
+margin_right = 76.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( -43.0975, 135 )
+icon = ExtResource( 9 )
+
+[node name="Front" type="Button" parent="Panel/VBox/Grid" groups=[
+"Faces",
+]]
+margin_left = 81.0
+margin_top = 150.0
+margin_right = 156.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( -43.0975, 135 )
+icon = ExtResource( 10 )
+
+[node name="Top" type="Button" parent="Panel/VBox/Grid" groups=[
+"Faces",
+]]
+margin_left = 161.0
+margin_top = 150.0
+margin_right = 237.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( -43.0975, 135 )
+icon = ExtResource( 11 )
+
+[node name="Size" type="MarginContainer" parent="Panel/VBox"]
+editor/display_folded = true
+margin_top = 250.0
+margin_right = 237.0
+margin_bottom = 274.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+
+[node name="HBox" type="HBoxContainer" parent="Panel/VBox/Size"]
+editor/display_folded = true
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 232.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="Panel/VBox/Size/HBox"]
+margin_right = 222.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "Size"
+valign = 1
+
+[node name="HBox" type="HBoxContainer" parent="Panel/VBox/Size/HBox/Label"]
+margin_left = 105.0
+margin_right = 222.0
+margin_bottom = 14.0
+
+[node name="X" type="Label" parent="Panel/VBox/Size/HBox/Label/HBox"]
+margin_right = 7.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.741176, 0, 0, 1 )
+text = "x"
+
+[node name="Label" type="Label" parent="Panel/VBox/Size/HBox/Label/HBox"]
+margin_left = 11.0
+margin_right = 18.0
+margin_bottom = 14.0
+text = "x"
+
+[node name="Y" type="Label" parent="Panel/VBox/Size/HBox/Label/HBox"]
+margin_left = 22.0
+margin_right = 29.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0.737255, 0, 1 )
+text = "y"
+
+[node name="Label2" type="Label" parent="Panel/VBox/Size/HBox/Label/HBox"]
+margin_left = 33.0
+margin_right = 40.0
+margin_bottom = 14.0
+text = "x"
+
+[node name="Z" type="Label" parent="Panel/VBox/Size/HBox/Label/HBox"]
+margin_left = 44.0
+margin_right = 51.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.231373, 0.231373, 1, 1 )
+text = "z"
+
+[node name="Zoom" type="MarginContainer" parent="Panel/VBox"]
+margin_top = 278.0
+margin_right = 237.0
+margin_bottom = 294.0
+custom_constants/margin_left = 10
+
+[node name="HBox" type="HBoxContainer" parent="Panel/VBox/Zoom"]
+margin_left = 10.0
+margin_right = 237.0
+margin_bottom = 16.0
+
+[node name="Label" type="Label" parent="Panel/VBox/Zoom/HBox"]
+margin_top = 1.0
+margin_right = 37.0
+margin_bottom = 15.0
+text = "Zoom"
+
+[node name="HSlider" type="HSlider" parent="Panel/VBox/Zoom/HBox"]
+margin_left = 41.0
+margin_right = 227.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+min_value = -0.5
+max_value = 0.5
+step = 0.0
+
+[node name="FaceSettings" parent="." instance=ExtResource( 12 )]
+margin_left = 407.043
+margin_top = 30.5184
+margin_right = 407.043
+margin_bottom = 30.5184
+[connection signal="button_down" from="Panel/VBox/Grid/UpDown" to="." method="_on_UpDown_button_down"]
+[connection signal="button_up" from="Panel/VBox/Grid/UpDown" to="." method="_on_UpDown_button_up"]
+[connection signal="button_down" from="Panel/VBox/Grid/Spin" to="." method="_on_Spin_button_down"]
+[connection signal="button_up" from="Panel/VBox/Grid/Spin" to="." method="_on_Spin_button_up"]
+[connection signal="button_down" from="Panel/VBox/Grid/OK" to="." method="_on_OK_button_down"]
+[connection signal="value_changed" from="Panel/VBox/Zoom/HBox/HSlider" to="." method="_on_zoom_value_changed"]
+[connection signal="face_settings_closed" from="FaceSettings" to="." method="_on_face_settings_closed"]
+[connection signal="remove_toggled" from="FaceSettings" to="." method="_on_Remove_toggled"]

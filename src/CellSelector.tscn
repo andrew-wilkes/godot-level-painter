@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://CellSelector.gd" type="Script" id=1]
+[ext_resource path="res://assets/icons/plus.png" type="Texture" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+
+[node name="CellSelector" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -73.0
+margin_bottom = -2.0
+rect_min_size = Vector2( 0, 15.67 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = -159.0
+margin_right = -1.0
+margin_bottom = 3.0
+
+[node name="Cells" type="HBoxContainer" parent="Control/ScrollContainer"]
+margin_right = 48.0
+margin_bottom = 162.0
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/ScrollContainer/Cells"]
+margin_right = 48.0
+margin_bottom = 162.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="NewCell" type="TextureButton" parent="Control/ScrollContainer/Cells/PanelContainer"]
+margin_top = 57.0
+margin_right = 48.0
+margin_bottom = 105.0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource( 2 )
+
+[node name="Views" type="Node" parent="."]
+[connection signal="button_down" from="Control/ScrollContainer/Cells/PanelContainer/NewCell" to="." method="_on_NewCell_button_down"]

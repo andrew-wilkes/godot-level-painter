@@ -1,0 +1,3 @@
+CellEditor
+
+var face_shader_mat = preload("res://assets/face_shader.material")

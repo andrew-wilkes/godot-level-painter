@@ -1,0 +1,42 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "Cell",
+"language": "GDScript",
+"path": "res://Cell.gd"
+}, {
+"base": "Node",
+"class": "Face",
+"language": "GDScript",
+"path": "res://face.gd"
+} ]
+_global_script_class_icons={
+"Cell": "res://assets/icons/cell-icon.png",
+"Face": ""
+}
+
+[application]
+
+config/name="Level Painter"
+run/main_scene="res://Main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+g="*res://g.gd"
+Parts="*res://Parts.gd"
+event_bus="*res://event_bus.gd"
+
+[rendering]
+
+environment/default_clear_color=Color( 0.121569, 0.145098, 0.192157, 1 )
+environment/default_environment="res://default_env.tres"
